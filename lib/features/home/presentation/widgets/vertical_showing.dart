@@ -15,7 +15,7 @@ class VerticalShowingWidget extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-          child: Image.asset('assets/images/poster.png'),
+          child: Image.asset('assets/images/poster1.png'),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

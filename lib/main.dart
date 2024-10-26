@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:movie/app/movie_app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie/core/utils/my_colors.dart';
+import 'package:movie/features/home/presentation/views/home_view.dart';
 
 
 void main() {
   runApp(const MovieApp());
 }
 
-<<<<<<< HEAD
-=======
+
 class MovieApp extends StatelessWidget {
   const MovieApp({super.key});
 
@@ -27,4 +28,4 @@ class MovieApp extends StatelessWidget {
     );
   }
 }
->>>>>>> bfcbbd3fc95364eec4810e779087394862431211
+
