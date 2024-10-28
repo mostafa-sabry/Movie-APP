@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie/core/api_services/services/get_it_locator.dart';
 import 'package:movie/features/home/presentation/views/home_view.dart';
 import 'core/utils/my_colors.dart';
 
 void main() {
+  setupServicesLocator();
   runApp(const MovieApp());
 }
 
