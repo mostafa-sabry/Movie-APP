@@ -22,7 +22,7 @@ class ShowingListViewWidget extends StatelessWidget {
           );
         } else if (state is GetEverythingSuccess) {
           final List<GetEverythingModel> results =
-              state.model.results; // استخدام النموذج المناسب
+              state.model.results; 
 
           if (results.isEmpty) {
             return const Center(child: Text("No results found"));
