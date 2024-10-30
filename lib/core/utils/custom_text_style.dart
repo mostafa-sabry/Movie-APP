@@ -13,12 +13,12 @@ class CustomTextStyles {
     color: MyColors.secondary,
   );
   static TextStyle subtitle14dark = GoogleFonts.merriweather(
-    fontSize: 18.sp,
+    fontSize: 14.sp,
     color: MyColors.black,
   );
 
   static TextStyle subtitle12gery = GoogleFonts.merriweather(
-    fontSize: 15.sp,
+    fontSize: 12.sp,
     color: MyColors.gery,
   );
 
