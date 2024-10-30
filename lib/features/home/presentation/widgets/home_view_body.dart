@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:movie/features/home/presentation/widgets/home_content_view.dart';
@@ -38,8 +39,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/images/bookmark.svg',
-              height: 25,
-              width: 25,
+              height: 25.h,
+              width: 25.h,
             ),
             label: 'Home',
           ),
@@ -54,8 +55,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               'assets/images/bookmark-2.svg',
-              height: 25,
-              width: 25,
+              height: 25.h,
+              width: 25.h,
             ),
             label: 'Bookmarks',
           ),
