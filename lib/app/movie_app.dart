@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie/core/utils/my_colors.dart';
-import 'package:movie/features/home/presentation/views/home_view.dart';
+import 'package:movie/features/auth/presentation/views/login_view.dart';
 
 class MovieApp extends StatelessWidget {
   const MovieApp({super.key});
@@ -17,7 +17,7 @@ class MovieApp extends StatelessWidget {
           scaffoldBackgroundColor: MyColors.primary,
           useMaterial3: true,
         ),
-        home: const HomeView(),
+        home: const LoginView(),
       ),
     );
   }

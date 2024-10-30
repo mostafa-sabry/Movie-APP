@@ -20,4 +20,13 @@ class CustomTextStyles {
     fontSize: 15,
     color: MyColors.gery,
   );
+
+  static TextStyle font28SemiBoldWith = GoogleFonts.poppins(
+    fontSize: 28,
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle font18SemiBoldWith = GoogleFonts.poppins(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
 }

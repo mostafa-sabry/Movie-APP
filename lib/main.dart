@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/app/movie_app.dart';
-import 'package:movie/core/api_services/services/get_it_locator.dart';
+import 'package:movie/core/Di/services/get_it_locator.dart';
 import 'package:movie/firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
