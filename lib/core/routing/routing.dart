@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/core/routing/routes.dart';
 import 'package:movie/features/auth/login/presentation/logic/cubit/login_user_cubit.dart';
 import 'package:movie/features/auth/login/presentation/views/login_view.dart';
+import 'package:movie/features/auth/signin/presentation/view/sigin_view.dart';
 import 'package:movie/features/home/presentation/views/home_view.dart';
 
+import '../../features/auth/signin/presentation/logic/cubit/create_user_cubit.dart';
 import '../api_services/fire_base_helpers/firebase_helper.dart';
 
 class Routing {
@@ -18,6 +20,12 @@ class Routing {
             builder: (context) => BlocProvider(
                   create: (context) => LoginUserCubit(FirebaseHelper()),
                   child: const LoginView(),
+                ));
+      case Routes.signUp:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                  create: (context) => CreateUserCubit(FirebaseHelper()),
+                  child: const SiginView(),
                 ));
       default:
         return MaterialPageRoute(builder: (context) => const NoRouteScreen());

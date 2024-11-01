@@ -3,8 +3,8 @@ import 'package:movie/core/utils/custom_text_style.dart';
 
 import '../../../../../core/routing/routes.dart';
 
-class MyNotAMember extends StatelessWidget {
-  const MyNotAMember({
+class AlreadyHaveAnAccount extends StatelessWidget {
+  const AlreadyHaveAnAccount({
     super.key,
   });
 
@@ -14,15 +14,15 @@ class MyNotAMember extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Not A Member ?',
+          'Already have an account ?',
           style: CustomTextStyles.font14Dark,
         ),
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, Routes.signUp);
+            Navigator.pushNamed(context, Routes.login);
           },
           child: Text(
-            "Register Now",
+            "Login Now",
             style: CustomTextStyles.font14Blue,
           ),
         )
