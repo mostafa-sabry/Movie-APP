@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:movie/features/home/data/models/get_everything_model.dart';
 
+import '../../../../core/helpers/spacing.dart';
+
 class MovieDetailsWidget extends StatelessWidget {
   final GetEverythingModel movie;
 
-  const MovieDetailsWidget({Key? key, required this.movie}) : super(key: key);
+  const MovieDetailsWidget({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +28,23 @@ class MovieDetailsWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 16.0),
+          verticalSpace(16.0),
 
           // Movie Title
           Text(
             movie.title ?? 'Untitled',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8.0),
+          verticalSpace(8),
 
           // Rating and Vote Count
           Row(
             children: [
-              Icon(Icons.star, color: Colors.amber),
-              SizedBox(width: 4.0),
+              const Icon(Icons.star, color: Colors.amber),
+              verticalSpace(8),
               Text(
                 '${movie.voteAverage?.toStringAsFixed(1) ?? 'N/A'}/10 IMDb',
                 style: TextStyle(
@@ -50,7 +52,7 @@ class MovieDetailsWidget extends StatelessWidget {
                   color: Colors.grey[700],
                 ),
               ),
-              SizedBox(width: 10.0),
+              verticalSpace(10),
               Text(
                 '(${movie.voteCount ?? 0} votes)',
                 style: TextStyle(
@@ -60,7 +62,7 @@ class MovieDetailsWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16.0),
+          verticalSpace(16),
 
           // Release Date
           Text(
@@ -70,7 +72,7 @@ class MovieDetailsWidget extends StatelessWidget {
               color: Colors.grey[700],
             ),
           ),
-          SizedBox(height: 16.0),
+          verticalSpace(16),
 
           // Overview
           Text(

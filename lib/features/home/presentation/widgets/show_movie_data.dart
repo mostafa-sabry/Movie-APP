@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import '../../data/models/get_everything_model.dart';
 import 'movie_details_widget.dart';
+
 class ShowMovieDetails extends StatelessWidget {
   final GetEverythingModel movie;
 
-  const ShowMovieDetails({Key? key, required this.movie}) : super(key: key);
+  const ShowMovieDetails({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {

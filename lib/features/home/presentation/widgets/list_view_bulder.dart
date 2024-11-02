@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:movie/features/home/presentation/widgets/items_showing_list.dart';
+import '../../../../core/utils/my_colors.dart';
 import '../../data/models/get_everything_model.dart';
 
 import '../cubit_everything/cubit/get_everything_cubit.dart';
@@ -15,14 +17,15 @@ class ShowingListViewWidget extends StatelessWidget {
         print("Current state: $state");
 
         if (state is GetEverythingLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return Center(
+              child: LoadingAnimationWidget.fourRotatingDots(
+                  color: MyColors.secondary, size: 60));
         } else if (state is GetEverythingError) {
           return Center(
             child: Text("Failed to load data: ${state.errorMessage}"),
           );
         } else if (state is GetEverythingSuccess) {
-          final List<GetEverythingModel> results =
-              state.model.results; 
+          final List<GetEverythingModel> results = state.model.results;
 
           if (results.isEmpty) {
             return const Center(child: Text("No results found"));

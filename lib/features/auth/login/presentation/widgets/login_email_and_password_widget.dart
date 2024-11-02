@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:movie/features/auth/login/presentation/logic/cubit/login_user_cubit.dart';
 
 import '../../../../../core/helpers/show_tost.dart';
@@ -89,10 +90,12 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                 const ForgetPassword(),
                 verticalSpace(30),
                 state is LoginUserLoading
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                        color: MyColors.secondary,
-                      ))
+                    ? Center(
+                        child: LoadingAnimationWidget.flickr(
+                            leftDotColor: MyColors.bg,
+                            rightDotColor: MyColors.secondary,
+                            size: 40),
+                      )
                     : MyButton(
                         onTap: () {
                           if (context
