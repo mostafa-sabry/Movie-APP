@@ -1,55 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie/features/home/data/models/lib/models/get_everything_model.dart';
+import 'package:movie/features/home/presentation/widgets/lib/screens/lib/screens/movie_detailed_screen.dart.dart';
 
-import '../../../../../../../../core/utils/custom_text_style.dart';
-
-class ItemSowhingList extends StatelessWidget {
-  const ItemSowhingList({
-    super.key,
+class ItemShowingList extends StatelessWidget {
+  const ItemShowingList({
+    Key? key,
     required this.results,
-  });
+  }) : super(key: key);
+
   final GetEverythingModel results;
+
   @override
   Widget build(BuildContext context) {
     const String baseImageUrl = 'https://image.tmdb.org/t/p/w400';
-    return Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Image.network(
-                    '$baseImageUrl${results.posterPath}'
-                    'https://b3751545.smushcdn.com/3751545/wp-content/uploads/2024/09/Venom-The-Last-Dance-2024.webp?lossy=1&strip=1&webp=1',
-                    height: 215,
-                    width: 143),
+    return InkWell(
+      onTap: () {
+        if (results.id != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MovieDetailScreen(results: results), // Pass the whole model
+            ),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Movie ID is missing.")),
+          );
+        }
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.network(
+              '$baseImageUrl${results.posterPath}',
+              height: 200,
+              width: 143,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 8),
+            SizedBox(
+              width: 100,
+              child: Text(
+                results.title ?? "",
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 14, color: Colors.black),
               ),
-              SizedBox(
-                width: 100.h,
-                child: Text(
-                  results.title ?? "",
-                  maxLines: 2,
-                  // overflow: TextOverflow.ellipsis,
-                  style: CustomTextStyles.subtitle14dark,
+            ),
+            Row(
+              children: [
+                SvgPicture.asset('assets/images/star.svg'),
+                Text(
+                  '${results.voteAverage}/10 IMDb',
+                  style: const TextStyle(fontSize: 12, color: Colors.grey),
                 ),
-              ),
-              Row(
-                children: [
-                  SvgPicture.asset('assets/images/star.svg'),
-                  Text(
-                    '${results.voteAverage}/10 IMDb',
-                    style: CustomTextStyles.subtitle12gery,
-                  ),
-                ],
-              )
-            ],
-          ),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
