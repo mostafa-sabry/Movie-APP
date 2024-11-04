@@ -13,9 +13,9 @@ class MovieApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
+      minTextAdapt: true,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-
         theme: ThemeData(
           scaffoldBackgroundColor: MyColors.primary,
           useMaterial3: true,
