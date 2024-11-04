@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:movie/core/api_services/fire_base_helpers/firebase_helper.dart';
 import 'package:movie/core/utils/my_colors.dart';
 import 'package:movie/features/auth/login/presentation/logic/cubit/login_user_cubit.dart';
 
