@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie/core/utils/my_colors.dart';
+import 'package:movie/home_or_login.dart';
 
-import '../core/routing/routes.dart';
 import '../core/routing/routing.dart';
 
 class MovieApp extends StatelessWidget {
@@ -15,12 +15,13 @@ class MovieApp extends StatelessWidget {
       designSize: const Size(375, 812),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Stream Everywhere',
+
         theme: ThemeData(
           scaffoldBackgroundColor: MyColors.primary,
           useMaterial3: true,
         ),
-        initialRoute: Routes.login,
+        home: const HomeOrLogin(),
+        // initialRoute: Routes.login,
         onGenerateRoute: routing.generateRoute,
       ),
     );
