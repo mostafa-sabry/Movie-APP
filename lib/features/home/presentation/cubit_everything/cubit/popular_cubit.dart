@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-import '../../../data/models/get_everything_response_model.dart';
+import '../../../data/models/lib/models/get_everything_response_model.dart';
 
 part 'popular_state.dart';
 

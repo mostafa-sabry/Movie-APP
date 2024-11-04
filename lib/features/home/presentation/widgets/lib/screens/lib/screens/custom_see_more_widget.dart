@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/custom_text_style.dart';
+import '../../../../../../../../core/utils/custom_text_style.dart';
 
 class SeeMoreWidget extends StatelessWidget {
   const SeeMoreWidget({

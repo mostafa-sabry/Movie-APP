@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:movie/features/home/presentation/widgets/items_showing_list.dart';
-import '../../../../core/utils/my_colors.dart';
-import '../../data/models/get_everything_model.dart';
+import 'package:movie/features/home/presentation/widgets/lib/screens/lib/screens/items_showing_list.dart';
+import '../../../../../../../../core/utils/my_colors.dart';
+import '../../../../../../data/models/lib/models/get_everything_model.dart';
+import '../../../../../cubit_everything/cubit/get_everything_cubit.dart';
 
-import '../cubit_everything/cubit/get_everything_cubit.dart';
 
 class ShowingListViewWidget extends StatelessWidget {
   const ShowingListViewWidget({super.key});
@@ -38,7 +38,7 @@ class ShowingListViewWidget extends StatelessWidget {
               itemCount: results.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
-                return ItemSowhingList(results: results[index]);
+                return ItemShowingList(results: results[index]);
               },
             ),
           );

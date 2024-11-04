@@ -1,4 +1,4 @@
-import 'package:movie/features/home/data/models/get_everything_model.dart';
+import 'package:movie/features/home/data/models/lib/models/get_everything_model.dart';
 
 class GetEverythingResponseModel {
   final List<GetEverythingModel> results;
