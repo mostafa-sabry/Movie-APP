@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie/core/api_services/fire_base_helpers/firebase_helper.dart';
+import 'package:movie/core/networking/fire_base_helpers/firebase_helper.dart';
 
 part 'login_user_state.dart';
 

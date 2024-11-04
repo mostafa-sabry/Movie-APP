@@ -1,33 +1,40 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../../core/api_services/fire_base_helpers/firebase_helper.dart';
+import '../../../../../../core/networking/fire_base_helpers/firebase_helper.dart';
 
 part 'create_user_state.dart';
 
 class CreateUserCubit extends Cubit<CreateUserState> {
   CreateUserCubit(this.firebaseHelper) : super(CreateUserInitial());
-  final FirebaseHelper firebaseHelper;
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController repasswordController = TextEditingController();
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  createUser() async {
+  final FirebaseHelper firebaseHelper;
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController repasswordController = TextEditingController();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  Future<void> createUser() async {
     emit(CreateUserLoading());
-    try {
-      await FirebaseFirestore.instance.collection("users").doc().set({
-        "name": nameController.text.trim(),
-        "email": emailController.text.trim(),
-        "password": passwordController.text.trim(),
-        "repassword": repasswordController.text.trim(),
-        "image": "",
-      }).then((value) {
+    if (formKey.currentState!.validate()) {
+      try {
+        await firebaseHelper.registerUser(
+          emailController.text,
+          passwordController.text,
+        );
+
+        await firebaseHelper.createUser(
+          email: emailController.text,
+          name: nameController.text,
+          password: passwordController.text,
+          image: '',
+        );
+
         emit(CreateUserSuccess());
-      });
-    } catch (e) {
+      } catch (e) {
+        emit(CreateUserError());
+      }
+    } else {
       emit(CreateUserError());
     }
   }

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie/core/api_services/api/dio_consumer.dart';
-import 'package:movie/core/api_services/fire_base_helpers/firebase_helper.dart';
+import 'package:movie/core/networking/api/dio_consumer.dart';
+import 'package:movie/core/networking/fire_base_helpers/firebase_helper.dart';
 
 final getIt = GetIt.instance;
 

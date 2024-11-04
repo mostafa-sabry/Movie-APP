@@ -103,44 +103,44 @@ class _CreateEmailAndPasswordState extends State<CreateEmailAndPassword> {
                   ),
                 ),
                 verticalSpace(20),
-                Text(
-                  'Re-Password',
-                  style: CustomTextStyles.font18SemiBoldWith,
-                ),
-                verticalSpace(10),
-                MyTextFormField(
-                  hintText: 'Enter Re-Password',
-                  isObscure: isObscure1,
-                  controller:
-                      context.read<CreateUserCubit>().repasswordController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter Re-Password';
-                    } else if (context
-                            .read<CreateUserCubit>()
-                            .repasswordController
-                            .text
-                            .trim() !=
-                        context
-                            .read<CreateUserCubit>()
-                            .passwordController
-                            .text
-                            .trim()) {
-                      return 'Password does not match';
-                    }
-                    return null;
-                  },
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isObscure1 = !isObscure1;
-                      });
-                    },
-                    icon: isObscure1
-                        ? const Icon(Icons.visibility)
-                        : const Icon(Icons.visibility_off),
-                  ),
-                ),
+                // Text(
+                //   'Re-Password',
+                //   style: CustomTextStyles.font18SemiBoldWith,
+                // ),
+                // verticalSpace(10),
+                // MyTextFormField(
+                //   hintText: 'Enter Re-Password',
+                //   isObscure: isObscure1,
+                //   controller:
+                //       context.read<CreateUserCubit>().repasswordController,
+                //   validator: (value) {
+                //     if (value == null || value.isEmpty) {
+                //       return 'Please enter Re-Password';
+                //     } else if (context
+                //             .read<CreateUserCubit>()
+                //             .repasswordController
+                //             .text
+                //             .trim() !=
+                //         context
+                //             .read<CreateUserCubit>()
+                //             .passwordController
+                //             .text
+                //             .trim()) {
+                //       return 'Password does not match';
+                //     }
+                //     return null;
+                //   },
+                //   suffixIcon: IconButton(
+                //     onPressed: () {
+                //       setState(() {
+                //         isObscure1 = !isObscure1;
+                //       });
+                //     },
+                //     icon: isObscure1
+                //         ? const Icon(Icons.visibility)
+                //         : const Icon(Icons.visibility_off),
+                //   ),
+                // ),
                 verticalSpace(35),
                 state is CreateUserLoading
                     ? Center(

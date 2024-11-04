@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:movie/core/api_services/api/api_consumer.dart';
-import 'package:movie/core/api_services/api/api_interceptors.dart';
-import 'package:movie/core/api_services/api/end_points.dart';
+import 'package:movie/core/networking/api/api_consumer.dart';
+import 'package:movie/core/networking/api/api_interceptors.dart';
+import 'package:movie/core/networking/api/end_points.dart';
 
 
 class DioConsumer extends ApiConsumer {

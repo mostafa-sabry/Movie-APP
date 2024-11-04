@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:movie/core/api_services/api/api_consumer.dart';
+import 'package:movie/core/networking/api/api_consumer.dart';
 import 'package:movie/features/home/data/models/lib/models/get_everything_response_model.dart';
 
 class GetEverythingRepo {
